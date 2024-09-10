@@ -1,0 +1,15 @@
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.AssemblyInfoInputs.cache
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.AssemblyInfo.cs
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.csproj.CoreCompileInputs.cache
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.sourcelink.json
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\bin\Debug\net8.0\TareaListas.exe
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\bin\Debug\net8.0\TareaListas.deps.json
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\bin\Debug\net8.0\TareaListas.runtimeconfig.json
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\bin\Debug\net8.0\TareaListas.dll
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\bin\Debug\net8.0\TareaListas.pdb
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.dll
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\refint\TareaListas.dll
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.pdb
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\TareaListas.genruntimeconfig.cache
+C:\Users\Fabiola\Documents\TEC\II Semestre\Algoritmos y estructuras de datos I\TareaListas\TareaListas\TareaListas\obj\Debug\net8.0\ref\TareaListas.dll
