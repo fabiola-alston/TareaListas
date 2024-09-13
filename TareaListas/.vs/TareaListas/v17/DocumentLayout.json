@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Fabiola\\Documents\\TEC\\II Semestre\\Algoritmos y estructuras de datos I\\TareaListas\\TareaListas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBEE74FC-851D-4256-A3BD-52DC16C9FE1C}|DoublyLinkedListTest\\DoublyLinkedListTest.csproj|c:\\users\\fabiola\\documents\\tec\\ii semestre\\algoritmos y estructuras de datos i\\tarealistas\\tarealistas\\doublylinkedlisttest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBEE74FC-851D-4256-A3BD-52DC16C9FE1C}|DoublyLinkedListTest\\DoublyLinkedListTest.csproj|solutionrelative:doublylinkedlisttest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EE0C8205-9BBB-43B0-94CA-60C3D11156C9}|TareaListas\\TareaListas.csproj|c:\\users\\fabiola\\documents\\tec\\ii semestre\\algoritmos y estructuras de datos i\\tarealistas\\tarealistas\\tarealistas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE0C8205-9BBB-43B0-94CA-60C3D11156C9}|TareaListas\\TareaListas.csproj|solutionrelative:tarealistas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Fabiola\\Documents\\TEC\\II Semestre\\Algoritmos y estructuras de datos I\\TareaListas\\TareaListas\\DoublyLinkedListTest\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "DoublyLinkedListTest\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Fabiola\\Documents\\TEC\\II Semestre\\Algoritmos y estructuras de datos I\\TareaListas\\TareaListas\\DoublyLinkedListTest\\UnitTest1.cs",
+              "RelativeToolTip": "DoublyLinkedListTest\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:05:11.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Fabiola\\Documents\\TEC\\II Semestre\\Algoritmos y estructuras de datos I\\TareaListas\\TareaListas\\TareaListas\\Program.cs",
               "RelativeDocumentMoniker": "TareaListas\\Program.cs",
               "ToolTip": "C:\\Users\\Fabiola\\Documents\\TEC\\II Semestre\\Algoritmos y estructuras de datos I\\TareaListas\\TareaListas\\TareaListas\\Program.cs",
               "RelativeToolTip": "TareaListas\\Program.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAYwGAAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4BAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T01:38:46.053Z",
               "EditorCaption": ""

@@ -1,5 +1,11 @@
 ﻿#nullable disable
 
+public enum SortDirection
+{
+    Ascending,
+    Descending
+}
+
 // nota: nombre la interfaz "ILista" en vez de "IList" como en los requerimientos por que al parecer C# tiene una interfaz/clase o algo(? llamado IList ya.
 public interface ILista
 {
@@ -8,7 +14,7 @@ public interface ILista
     public int DeleteLast();
     public bool DeleteValue(int value);
     public int GetMiddle();
-    public void MergeSorted();
+    public void MergeSorted(DoublyLinkedList listA, DoublyLinkedList listB, SortDirection direction);
 
 }
 
@@ -18,59 +24,85 @@ public class DoubleNode
     public DoubleNode next;
     public DoubleNode previous;
 
-
 }
 
 public class DoublyLinkedList : ILista
 {
     private DoubleNode first;
+    private DoubleNode last;
+    private DoubleNode pivot;
+    private int counter;
+
+    private void UpdateLast()
+    {
+        if (first != null)
+        {
+            DoubleNode current = first;
+
+            while (current.next != null)
+            {
+                current = current.next;
+            }
+
+            last = current;
+        }
+    }
 
     public void InsertInOrder(int value)
     {
+        DoubleNode insertNode = new DoubleNode();
+        insertNode.value = value;
+
         if (first == null)
         {
-            Console.WriteLine($"Wrote {value} first!");
-            first = new DoubleNode();
-            first.value = value; 
+            first = insertNode;
+            pivot = insertNode;
+            last = insertNode;
+            counter = 1;
         }
         else
         {
-            DoubleNode current = first;
-            DoubleNode insertedNode = new DoubleNode();
-            insertedNode.value = value;
-
-            // checks list order and inserts value in correct space
-            while (current != null)
+            if (value <= first.value)
             {
-                if (current.value >= value && current == first)
-                {
-                    first.previous = insertedNode;
-                    insertedNode.next = first;
-                    first = insertedNode;
-                    break;
-                }
-
-                else if (current.value >= value && current != first)
-                {
-                    insertedNode.next = current;
-                    current.previous.next = insertedNode;
-                    insertedNode.previous = current.previous;
-                    current.previous = insertedNode;
-                    break;
-
-                }
-
-                else if (current.value <= value && current.next == null)
-                {
-                    current.next = insertedNode;
-                    insertedNode.previous = current;
-                    break;
-                }
-
-                current = current.next;
+                insertNode.next = first;
+                first.previous = insertNode;
+                first = insertNode;
             }
-            
+
+            else if (value >= last.value)
+            {
+                last.next = insertNode;
+                insertNode.previous = last;
+                last = insertNode;
+            }
+            else
+            {
+                DoubleNode current = first;
+
+                while (current != null && current.value < value)
+                {
+                    current = current.next;
+                }
+
+                insertNode.previous = current.previous;
+                insertNode.next = current;
+                current.previous.next = insertNode;
+                current.previous = insertNode;
+            }
+
+            counter++;
+
+            if (counter % 2 == 0)
+            {
+                pivot = this.IndexNode((counter / 2));
+            }
+            else if (counter % 2 != 0)
+            {
+                pivot = this.IndexNode(((counter - 1) / 2));
+            }
         }
+        
+
     }
 
     public int DeleteFirst()
@@ -79,6 +111,12 @@ public class DoublyLinkedList : ILista
         {
             first = null;
         }
+
+        else if (first == null)
+        {
+            EmptyException();
+        }
+
         else
         {
             first = first.next;
@@ -105,8 +143,10 @@ public class DoublyLinkedList : ILista
         }
         else
         {
-            throw new Exception("List is empty.");
+            EmptyException();
         }
+
+        this.UpdateLast();
 
         return 0;
     }
@@ -135,14 +175,139 @@ public class DoublyLinkedList : ILista
 
     public int GetMiddle()
     {
-        return 0;
+        return pivot.value;
     }
 
-    public void MergeSorted()
+    public void MergeSorted(DoublyLinkedList listA, DoublyLinkedList listB, SortDirection direction)
+    {
+        switch(direction)
+        {
+            case SortDirection.Ascending:
+                for (int i = 0; i < listB.Length(); i++)
+                {
+                    listA.InsertInOrder(listB.IndexValue(i));
+                }
+
+                break;
+
+            case SortDirection.Descending:
+                for (int i = 0; i < listB.Length(); i++)
+                {
+                    listA.InsertInOrder(listB.IndexValue(i));
+                }
+
+                listA.InvertList();
+
+                break;
+        }
+    }
+
+    public void InvertList()
+    {
+        for (int i = 0; i < this.Length(); i++)
+        {
+            this.AddAt(i, last.value);
+            this.DeleteLast();
+            UpdateLast();
+        }
+    }
+
+    public int Length()
+    { 
+        int length = 0;
+
+        if (first != null)
+        {
+            DoubleNode current = first;
+
+            while (current != null)
+            {
+                length++;
+                current = current.next;
+            }
+        }
+
+        return length;
+    }
+
+    private void EmptyException()
+    {
+        throw new Exception("List is empty.");
+    }
+
+    public int IndexValue(int index)
+    {
+        DoubleNode current = first;
+
+        for (int i = 0; i < index; i++)
+        {
+            current = current.next;
+        }
+
+        return current.value;
+
+    }
+
+    public DoubleNode IndexNode(int index)
+    {
+        DoubleNode current = first;
+
+        for (int i = 0; i < index; i++)
+        {
+            current = current.next;
+        }
+
+        return current;
+    }
+
+    public void AddAt(int index, int value)
     {
 
-    }
+        if (index > this.Length() - 1)
+        {
+            throw new Exception("Index out of range.");
+        }
 
+        else
+        {
+            DoubleNode current = first;
+
+            for (int i = 0; i < index; i++)
+            {
+                current = current.next;
+            }
+
+            UpdateLast();
+
+            DoubleNode insertNode = new DoubleNode();
+            insertNode.value = value;
+
+            if (current == first)
+            {
+                first.previous = insertNode;
+                insertNode.next = first;
+                first = insertNode;
+            }
+            else if (current == last)
+            {
+                insertNode.previous = last.previous;
+                last.previous = insertNode;
+                insertNode.next = last;
+                insertNode.previous.next = insertNode;
+
+            }
+            else
+            {
+                insertNode.previous = current.previous;
+                current.previous = insertNode;
+                insertNode.next = current;
+                insertNode.previous.next = insertNode;
+            }
+
+        }
+        
+                
+    }
 
     // prints list (debugging purpose)
     public void Print()
@@ -166,21 +331,6 @@ public class Program
 {
     public static void Main()
     {
-        DoublyLinkedList list = new DoublyLinkedList();
-
-        list.InsertInOrder(6);
-        list.InsertInOrder(2);
-        list.InsertInOrder(10);
-        list.InsertInOrder(3);
-        list.InsertInOrder(8);
-        list.InsertInOrder(5);
-
-        list.Print();
-
-        list.DeleteValue(8);
-        list.DeleteValue(4);
-
-        list.Print();
 
     }
 }
